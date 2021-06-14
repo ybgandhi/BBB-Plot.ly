@@ -54,6 +54,30 @@ var populateDropdown = function(names) {
         })
 };
 
+var optionChanged = function(newValue) {
+
+    d3.json("static/samples.json").then(function (data) {
+    
+    sample_new = data["samples"].filter(function(sample) {
+        return sample.id == newValue;
+    }); 
+
+    metadata_new = data["metadata"].filter(function(metadata) {
+
+    });
+
+    x_data = sample_new[0]["otu_ids"];
+    console.log(x_data);
+    y_data = sample_new[0]["sample_values"];
+    console.log(y_data);
+    hoverText = sample_new[0]["otu_labels"];
+    console.log(hoverText);
+    
+    addChart(x_data, y_data, hoverText, metadata_new[0]);
+    });
+};
+
+
 d3.json("static/samples.json").then(function(data) {
     // populate dropdown with names
     populateDropdown(data["names"]);
