@@ -15,4 +15,21 @@ var addChart = function(x_data, y_data, hoverText, metadata) {
         type: 'bar',
         orientation: 'h'
     };
+    
+    var data = [trace];
+
+    Plotly.newPlot('bar', data);
+
+    var trace2 = {
+        x: x_data,
+        y: y_data,
+        text: hoverText,
+        mode: 'markers',
+        marker: {
+            size: y_data,
+            color: x_data
+        }
+    };
+
+    
 }
