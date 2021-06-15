@@ -67,6 +67,8 @@ var optionChanged = function(newValue) {
         return metadata.id == newValue;
     });
 
+    Gauge(metadata_new.freq);
+
     x_data = sample_new[0]["otu_ids"];
     console.log(x_data);
     y_data = sample_new[0]["sample_values"];

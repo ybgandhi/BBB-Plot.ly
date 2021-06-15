@@ -8,7 +8,7 @@ function Gauge(wfreq) {
     var degrees = 100 - level;
     var radius = 0.5;
     var radians = (degrees * Math.PI) /180;
-    var x = radius * Math.cos(radains);
+    var x = radius * Math.cos(radians);
     var y = radius * Math.sin(radians);
 
     // triangle
@@ -55,34 +55,34 @@ function Gauge(wfreq) {
             showlegend: false 
         }
     ];
-    var layout = {
-        shapes: [
-          {
-            type: "path",
-            path: path,
-            fillcolor: "850000",
-            line: {
-              color: "850000"
-            }
-          }
-        ],
-        title: "<b>Belly Button Washing Frequency</b> <br> Scrubs per Week",
-        height: 500,
-        width: 500,
-        xaxis: {
-          zeroline: false,
-          showticklabels: false,
-          showgrid: false,
-          range: [-1, 1]
-        },
-        yaxis: {
-          zeroline: false,
-          showticklabels: false,
-          showgrid: false,
-          range: [-1, 1]
-        }
-      };
+    // var layout = {
+    //     shapes: [
+    //       {
+    //         type: "path",
+    //         path: path,
+    //         fillcolor: "850000",
+    //         line: {
+    //           color: "850000"
+    //         }
+    //       }
+    //     ],
+    //     title: "<b>Belly Button Washing Frequency</b> <br> Scrubs per Week",
+    //     height: 500,
+    //     width: 500,
+    //     xaxis: {
+    //       zeroline: false,
+    //       showticklabels: false,
+    //       showgrid: false,
+    //       range: [-1, 1]
+    //     },
+    //     yaxis: {
+    //       zeroline: false,
+    //       showticklabels: false,
+    //       showgrid: false,
+    //       range: [-1, 1]
+    //     }
+    //   };
 
       var PRINT = document.getElementById("gauge");
-      Plotly.newPlot(PRINT, data, layout);
+      Plotly.newPlot(PRINT, data);
 }
