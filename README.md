@@ -9,3 +9,4 @@ leverage D3 library to read 'samples.json' file
 * Created bubble chart to display metadata and each key-value pair from the metadata JSON object
 * All plots update based on same that is selected (Subject ID No.)
 * Gauge feature is added to reflect sameple data selected
+
